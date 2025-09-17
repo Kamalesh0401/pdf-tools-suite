@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../../context/ThemeContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faFilePdf,
+    faMoon,
+    faSun,
+    faBars,
+    faTimes
+} from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,7 +57,7 @@ const Header = () => {
         <header className="header">
             <nav className="nav container">
                 <div className="logo">
-                    📄 PDF Tools Suite
+                    <FontAwesomeIcon icon={faFilePdf} className="logo-icon" /> PDF Tools Suite
                 </div>
 
                 <ul className={`nav-links ${isMenuOpen ? 'nav-links-mobile' : ''}`}>
@@ -71,7 +79,7 @@ const Header = () => {
                         onClick={toggleTheme}
                         title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
                     >
-                        {theme === 'light' ? '🌙' : '☀️'}
+                        <FontAwesomeIcon icon={theme === 'light' ? faMoon : faSun} />
                     </button>
 
                     <button
@@ -79,7 +87,7 @@ const Header = () => {
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         aria-label="Toggle navigation menu"
                     >
-                        {isMenuOpen ? '✕' : '☰'}
+                        <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
                     </button>
                 </div>
             </nav>

@@ -1,26 +1,33 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faBullseye,
+    faLock,
+    faBolt,
+    faMobileAlt
+} from '@fortawesome/free-solid-svg-icons';
 
 const Hero = () => {
     const features = [
         {
             title: "100% Free",
             description: "No hidden costs",
-            icon: "🎯"
+            icon: <FontAwesomeIcon icon={faBullseye} />
         },
         {
             title: "Privacy First",
             description: "Files never leave your device",
-            icon: "🔒"
+            icon: <FontAwesomeIcon icon={faLock} />
         },
         {
             title: "No Registration",
             description: "Start using immediately",
-            icon: "⚡"
+            icon: <FontAwesomeIcon icon={faBolt} />
         },
         {
             title: "Works Offline",
             description: "No internet required after loading",
-            icon: "📱"
+            icon: <FontAwesomeIcon icon={faMobileAlt} />
         }
     ];
 
@@ -36,11 +43,12 @@ const Hero = () => {
 
                     <div className="hero-features">
                         {features.map((feature, index) => (
-                            <div key={index} className="hero-feature animate-fade-in-up"
-                                style={{ animationDelay: `${index * 0.1}s` }}>
-                                <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>
-                                    {feature.icon}
-                                </div>
+                            <div
+                                key={index}
+                                className="hero-feature animate-fade-in-up"
+                                style={{ animationDelay: `${index * 0.1}s` }}
+                            >
+                                <div className="hero-icon">{feature.icon}</div>
                                 <strong>{feature.title}</strong>
                                 <p>{feature.description}</p>
                             </div>
