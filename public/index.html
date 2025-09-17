@@ -1,43 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#6366f1" />
+  <meta name="description"
+    content="Free online PDF tools suite - Convert PDF to Word, merge PDF files, split PDF, compress PDF, and convert PDF to images. No registration required, complete privacy protection." />
+  <meta name="keywords"
+    content="pdf tools, pdf converter, merge pdf, split pdf, compress pdf, pdf to word, pdf to images, free pdf tools" />
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="PDF Tools Suite - Free Online PDF Converter" />
+  <meta property="og:description"
+    content="Convert, merge, split, and compress PDF files online for free. All processing happens in your browser for maximum privacy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yoursite.com" />
+  <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PDF Tools Suite - Free Online PDF Converter" />
+  <meta name="twitter:description"
+    content="Free PDF tools that work entirely in your browser. No uploads, complete privacy." />
+  <meta name="twitter:image" content="%PUBLIC_URL%/twitter-image.png" />
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" as="script" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" as="script" />
+
+  <!-- Load external libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <title>PDF Tools Suite - Free Online PDF Converter & Editor</title>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "PDF Tools Suite",
+      "description": "Free online PDF tools for converting, merging, splitting, and compressing PDF files",
+      "url": "https://yoursite.com",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "PDF to Word conversion",
+        "Merge multiple PDF files",
+        "Split PDF into pages",
+        "Compress PDF files",
+        "Convert PDF to images",
+        "Word to PDF conversion"
+      ]
+    }
+    </script>
+</head>
+
+<body>
+  <noscript>
+    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+      <h1>JavaScript Required</h1>
+      <p>This PDF tools application requires JavaScript to function.</p>
+      <p>Please enable JavaScript in your browser and refresh the page.</p>
+    </div>
+  </noscript>
+  <div id="root"></div>
+</body>
+
 </html>
