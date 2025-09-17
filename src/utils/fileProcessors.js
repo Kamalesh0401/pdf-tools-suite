@@ -144,9 +144,6 @@ const enhancedPdfToWord = async (file, options = {}, updateProgress = () => { })
 
         // Enhanced conversion with layout preservation
         let documentHtml = '';
-        const documentStyles = [];
-        const imageData = [];
-
         updateProgress(25, "Analyzing document structure...");
 
         for (let pageNum = 1; pageNum <= numPages; pageNum++) {
@@ -535,6 +532,8 @@ const worldClassHtmlToPdf = async (html, fileName, options, updateProgress, conv
                 case 'li':
                     marginBottom = 6;
                     break;
+                default: 
+                    break;
             }
 
             // Handle text nodes with advanced rendering
@@ -799,7 +798,7 @@ const enhancedCompressPdf = async (file, options = {}, updateProgress = () => { 
 
         const compressionLevel = Math.max(1, Math.min(3, parseInt(options.compressionLevel || 2, 10)));
         const removeMetadata = options.removeMetadata !== false;
-        const optimizeImages = options.optimizeImages !== false;
+        //const optimizeImages = options.optimizeImages !== false;
 
         updateProgress(20, "Analyzing document structure...");
 
@@ -829,7 +828,7 @@ const enhancedCompressPdf = async (file, options = {}, updateProgress = () => { 
             // Aggressive compression - remove unnecessary elements
             const pageCount = pdf.getPageCount();
             for (let i = 0; i < pageCount; i++) {
-                const page = pdf.getPage(i);
+                //const page = pdf.getPage(i);
                 // Note: Advanced image compression would require additional libraries
                 // This is a placeholder for future image optimization
             }
@@ -969,7 +968,8 @@ export const cleanupPdfWorker = () => {
 };
 
 /* ---------- Export ---------- */
-export default {
+
+const FileProcessor = {
     processFiles,
     cleanupPdfWorker,
     // Export individual enhanced functions for direct use
@@ -980,3 +980,4 @@ export default {
     enhancedCompressPdf,
     enhancedPdfToImages
 };
+export default FileProcessor;
